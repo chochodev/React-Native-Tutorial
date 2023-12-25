@@ -3,7 +3,7 @@ import {
   View, 
   Text,
   TouchableOpacity,
-  Flatlist,
+  FlatList,
   ActivityIndicator
 } from 'react-native';
 import { useRouter } from 'expo-router';
@@ -29,10 +29,20 @@ const Popularjobs = () => {
       <View style={styles.cardsContainer}>
         {isLoading? (
           <ActivityIndicator size="large" colors={COLORS.primary} />
-        ) : error ? (
+        ) : error? (
           <Text>Something went wrong</Text>
         ) : (
-          <Flatlist />
+          <FlatList 
+            data={[1, 2, 3, 4]}
+            renderItem={({ item }) => (
+              <PopularJobsCard 
+                item={item}
+              />
+            )}
+            keyExtractor={item => item?.job_id}
+            contentContainerStyle={{ columnGap: SIZES.medium}}
+            horizontal
+          />
         )}
       </View>
     </View>
