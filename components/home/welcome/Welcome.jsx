@@ -58,6 +58,8 @@ const Welcome = () => {
             </TouchableOpacity>
           )}
           keyExtractor={(item) => item}
+          contentContainerStyle={{ columnGap: SIZES.small }}
+          horizontal
         />
 
       </View>
