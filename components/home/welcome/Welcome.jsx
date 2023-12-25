@@ -11,7 +11,7 @@ import {
 import styles from './welcome.style'
 import { icons, SIZES } from '../../../constants';
 
-const jobTypes = ["Full-time", "Part-time", "Contracter"];
+const jobTypes = ["Full-time", "Part-time", "Contractor"];
 
 const Welcome = () => {
   const router = useRouter();
@@ -46,7 +46,7 @@ const Welcome = () => {
       <View style={styles.tabsContainer}>
         <FlatList
           data={jobTypes}
-          renderItem={({ item }) => {
+          renderItem={({ item }) => (
             <TouchableOpacity
               style={styles.tab(activeJobType, item)}
               onPress={() => {
@@ -56,8 +56,7 @@ const Welcome = () => {
             >
               <Text>{item}</Text>
             </TouchableOpacity>
-          }}
-          // keyExtractor={(item) => item}
+          )}
         />
 
       </View>
