@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useRouter } from 'expo-router';
 import { 
   View, 
   Text,
@@ -56,6 +57,7 @@ const Welcome = () => {
               <Text>{item}</Text>
             </TouchableOpacity>
           }}
+          // keyExtractor={(item) => item}
         />
 
       </View>
