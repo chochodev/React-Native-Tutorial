@@ -13,6 +13,9 @@ import { icons, SIZES } from '../../../constants';
 const jobTypes = ["Full-time", "Part-time", "Contracter"];
 
 const Welcome = () => {
+  const router = useRouter();
+  const [activeJobType, setActiveJobType] = useState('Full-time');
+
   return (
     <View>
       <View style={styles.container}>
@@ -40,7 +43,20 @@ const Welcome = () => {
       </View>
 
       <View style={styles.tabsContainer}>
-
+        <FlatList
+          data={jobTypes}
+          renderItem={({ item }) => {
+            <TouchableOpacity
+              style={styles.tab(activeJobType, item)}
+              onPress={() => {
+                setActiveJobType(item);
+                router.push(`/search/${item}`);
+              }}
+            >
+              <Text>{item}</Text>
+            </TouchableOpacity>
+          }}
+        />
 
       </View>
     </View>
