@@ -8,7 +8,9 @@ import {
   FlatList,
 } from 'react-native'
 import styles from './welcome.style'
-import { icons, SIZES } from '../../../constants'
+import { icons, SIZES } from '../../../constants';
+
+const jobTypes = ["Full-time", "Part-time", "Contracter"];
 
 const Welcome = () => {
   return (
@@ -38,7 +40,7 @@ const Welcome = () => {
       </View>
 
       <View style={styles.tabsContainer}>
-        
+
 
       </View>
     </View>
